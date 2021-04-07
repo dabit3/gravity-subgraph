@@ -2,7 +2,7 @@ specVersion: 0.0.2
 description: Gravatar for Ethereum
 repository: https://github.com/dabit3/gravity-subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: NDGravity
@@ -18,10 +18,10 @@ dataSources:
         - Gravatar
       abis:
         - name: NDGravity
-          file: ./abis/NDGravity.json
+          file: NDGravity/abis/NDGravity.json
       eventHandlers:
         - event: NewGravatar(uint256,address,string,string)
           handler: handleNewGravatar
         - event: UpdatedGravatar(uint256,address,string,string)
           handler: handleUpdatedGravatar
-      file: ./src/mapping.ts
+      file: NDGravity/NDGravity.wasm
